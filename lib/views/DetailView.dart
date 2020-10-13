@@ -14,7 +14,9 @@ class DetailView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.pop(context);
+          },
           child: Icon(Icons.arrow_back),
         ),
       ),
