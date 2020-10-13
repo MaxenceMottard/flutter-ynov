@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/models/Movie.dart';
+import 'package:movie_app/services/TMDBService.dart';
 import 'package:movie_app/shared/SizeConfig.dart';
 
 class DetailView extends StatelessWidget {
@@ -27,7 +28,7 @@ class DetailView extends StatelessWidget {
             top: 0,
             child: Image(
               width: SizeConfig.screenWidth,
-              image: NetworkImage(movie.posterUrl()),
+              image: NetworkImage(movie.posterUrl(size: TMDBPosterSize.w500)),
             ),
           ),
           Positioned(
@@ -65,9 +66,9 @@ class DetailView extends StatelessWidget {
                       spacing: 5,
                       children: [
                         Text("15+", style: TextStyle(color: Colors.white)),
-                        Text("2020", style: TextStyle(color: Colors.white)),
+                        Text(movie.getYear(), style: TextStyle(color: Colors.white)),
                         Icon(Icons.star, color: Colors.orange, size: 16,),
-                        Text("7.6", style: TextStyle(color: Colors.orange))
+                        Text(movie.voteAverage.toString(), style: TextStyle(color: Colors.orange))
                       ],
                     ),
                   ),
@@ -125,7 +126,7 @@ class DetailView extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 5),
                     child: Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+                        movie.overview,
                         style: TextStyle(color: Colors.white)),
                   ),
                 ],
