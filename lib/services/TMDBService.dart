@@ -33,7 +33,7 @@ class TMDBService {
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
       // then parse the JSON.
-      Map<String, dynamic> decodedData = json.decode(response.body).cast<Map<String, dynamic>>();
+      Map<String, dynamic> decodedData = json.decode(response.body);
       List<Movie> list = decodedData['results'].map<Movie>((json) => Movie.fromJson(json)).toList();
 
       return list;

@@ -8,6 +8,7 @@ import 'package:movie_app/shared/SizeConfig.dart';
 class MovieListView extends StatelessWidget{
 
   final List<Movie> items = [];
+  final TMDBService tmdbService = TMDBService();
 
   @override
   Widget build(BuildContext context) {
@@ -19,17 +20,17 @@ class MovieListView extends StatelessWidget{
           children: [
             VerticalCardList(
               title: "Popular Movies",
-              items: items,
+              future: tmdbService.getMovieList(TMDBMovieType.POPULAR),
               itemBuilder: (BuildContext context, Movie movie) => MovieCard(movie: movie),
             ),
             VerticalCardList(
               title: "Popular TV Show",
-              items: items,
+              future: tmdbService.getMovieList(TMDBMovieType.POPULAR),
               itemBuilder: (BuildContext context, Movie movie) => MovieCard(movie: movie),
             ),
             VerticalCardList(
               title: "Best Movies",
-              items: items,
+              future: tmdbService.getMovieList(TMDBMovieType.TOP_RATED),
               itemBuilder: (BuildContext context, Movie movie) => MovieCard(movie: movie),
             ),
           ],

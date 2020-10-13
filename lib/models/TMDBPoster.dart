@@ -7,6 +7,6 @@ abstract class TMDBPoster {
   TMDBPoster({Key key, this.posterPath});
 
   String posterUrl({String size = TMDBPosterSize.original}) {
-    return "$TMDBService.imageBaseUrl/$size$posterPath";
+    return "${TMDBService().imageBaseUrl}/$size$posterPath";
   }
 }
