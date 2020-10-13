@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/models/Movie.dart';
+import 'package:movie_app/services/TMDBService.dart';
 import 'package:movie_app/views/DetailView.dart';
 
 class MovieCard extends StatelessWidget {
@@ -21,7 +22,7 @@ class MovieCard extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(5),
             child: Image(
-                image: NetworkImage(movie.url),
+                image: NetworkImage(movie.posterUrl(size: TMDBPosterSize.w185)),
               fit: BoxFit.cover,
             ),
           ),

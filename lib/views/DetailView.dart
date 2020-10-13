@@ -27,7 +27,7 @@ class DetailView extends StatelessWidget {
             top: 0,
             child: Image(
               width: SizeConfig.screenWidth,
-              image: NetworkImage(movie.url),
+              image: NetworkImage(movie.posterUrl()),
             ),
           ),
           Positioned(

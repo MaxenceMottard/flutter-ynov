@@ -2,19 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/components/MovieCard.dart';
 import 'package:movie_app/components/VerticalList.dart';
 import 'package:movie_app/models/Movie.dart';
+import 'package:movie_app/services/TMDBService.dart';
 import 'package:movie_app/shared/SizeConfig.dart';
 
 class MovieListView extends StatelessWidget{
 
-  final List<Movie> items = [
-    Movie(title: "Enola Holmes", url: 'https://fr.web.img6.acsta.net/pictures/20/09/23/11/08/4358352.jpg'),
-    Movie(title: "Enola Holmes", url: 'https://fr.web.img6.acsta.net/pictures/20/09/23/11/08/4358352.jpg'),
-    Movie(title: "Enola Holmes", url: 'https://fr.web.img6.acsta.net/pictures/20/09/23/11/08/4358352.jpg'),
-    Movie(title: "Enola Holmes", url: 'https://fr.web.img6.acsta.net/pictures/20/09/23/11/08/4358352.jpg'),
-    Movie(title: "Enola Holmes", url: 'https://fr.web.img6.acsta.net/pictures/20/09/23/11/08/4358352.jpg'),
-    Movie(title: "Enola Holmes", url: 'https://fr.web.img6.acsta.net/pictures/20/09/23/11/08/4358352.jpg'),
-    Movie(title: "Interstellar", url: 'https://fr.web.img6.acsta.net/pictures/14/09/24/12/08/158828.jpg')
-  ];
+  final List<Movie> items = [];
 
   @override
   Widget build(BuildContext context) {
