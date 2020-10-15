@@ -21,6 +21,6 @@ class TvShow extends TMDBItem {
     posterPath: json['poster_path'],
     voteAverage: double.parse(json['vote_average'].toString()),
     overview: json['overview'],
-    releaseDate: json['release_date'],
+    releaseDate: json['first_air_date'],
   );
 }
