@@ -1,7 +1,7 @@
 import 'package:movie_app/models/TMDBItem.dart';
 
-class Movie extends TMDBItem {
-  Movie({
+class TvShow extends TMDBItem {
+  TvShow({
     title,
     posterPath,
     voteAverage,
@@ -16,8 +16,8 @@ class Movie extends TMDBItem {
   );
 
   @override
-  Movie fromJson(Map<String, dynamic> json) => Movie(
-    title: json['title'],
+  TvShow fromJson(Map<String, dynamic> json) => TvShow(
+    title: json['name'],
     posterPath: json['poster_path'],
     voteAverage: double.parse(json['vote_average'].toString()),
     overview: json['overview'],

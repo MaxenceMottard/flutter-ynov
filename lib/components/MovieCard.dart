@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/models/Movie.dart';
+import 'package:movie_app/models/TMDBItem.dart';
 import 'package:movie_app/services/TMDBService.dart';
 import 'package:movie_app/views/DetailView.dart';
 
 class MovieCard extends StatelessWidget {
-  final Movie movie;
+  final TMDBItem tmdbItem;
 
-  MovieCard({Key key, this.movie}) : super(key: key);
+  MovieCard({this.tmdbItem});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(
-          builder: (context) => DetailView(movie: movie)
+          builder: (context) => DetailView(tmdbItem: tmdbItem)
         ));
       },
       child: Padding(
@@ -22,7 +22,7 @@ class MovieCard extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(5),
             child: Image(
-                image: NetworkImage(movie.posterUrl(size: TMDBPosterSize.w185)),
+                image: NetworkImage(tmdbItem.posterUrl(size: TMDBPosterSize.w185)),
               fit: BoxFit.cover,
             ),
           ),

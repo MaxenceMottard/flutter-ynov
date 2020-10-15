@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/components/MovieCard.dart';
 import 'package:movie_app/components/VerticalList.dart';
 import 'package:movie_app/models/Movie.dart';
+import 'package:movie_app/models/TMDBItem.dart';
+import 'package:movie_app/models/TvShow.dart';
 import 'package:movie_app/services/TMDBService.dart';
 import 'package:movie_app/shared/SizeConfig.dart';
 
 class MovieListView extends StatelessWidget{
-
-  final List<Movie> items = [];
   final TMDBService tmdbService = TMDBService();
 
   @override
@@ -21,17 +21,17 @@ class MovieListView extends StatelessWidget{
             VerticalCardList(
               title: "Popular Movies",
               future: tmdbService.getMovieList(TMDBMovieType.POPULAR),
-              itemBuilder: (BuildContext context, Movie movie) => MovieCard(movie: movie),
+              itemBuilder: (BuildContext context, Movie movie) => MovieCard(tmdbItem: movie),
             ),
             VerticalCardList(
               title: "Popular TV Show",
-              future: tmdbService.getMovieList(TMDBMovieType.POPULAR),
-              itemBuilder: (BuildContext context, Movie movie) => MovieCard(movie: movie),
+              future: tmdbService.getTvShowList(TMDBMovieType.POPULAR),
+              itemBuilder: (BuildContext context, TvShow show) => MovieCard(tmdbItem: show),
             ),
             VerticalCardList(
               title: "Best Movies",
               future: tmdbService.getMovieList(TMDBMovieType.TOP_RATED),
-              itemBuilder: (BuildContext context, Movie movie) => MovieCard(movie: movie),
+              itemBuilder: (BuildContext context, Movie movie) => MovieCard(tmdbItem: movie),
             ),
           ],
         ),

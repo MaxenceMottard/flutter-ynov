@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/models/Movie.dart';
+import 'package:movie_app/models/TMDBItem.dart';
 import 'package:movie_app/services/TMDBService.dart';
 import 'package:movie_app/shared/SizeConfig.dart';
 
 class DetailView extends StatelessWidget {
-  final Movie movie;
+  final TMDBItem tmdbItem;
 
-  DetailView({Key key, this.movie}) : super(key: key);
+  DetailView({Key key, this.tmdbItem}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class DetailView extends StatelessWidget {
             top: 0,
             child: Image(
               width: SizeConfig.screenWidth,
-              image: NetworkImage(movie.posterUrl(size: TMDBPosterSize.w500)),
+              image: NetworkImage(tmdbItem.posterUrl(size: TMDBPosterSize.w500)),
             ),
           ),
           Positioned(
@@ -59,16 +59,16 @@ class DetailView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(movie.title, style: TextStyle( fontWeight: FontWeight.bold, fontSize: 27, color: Colors.white ),),
+                  Text(tmdbItem.title, style: TextStyle( fontWeight: FontWeight.bold, fontSize: 27, color: Colors.white ),),
                   Padding(
                     padding: const EdgeInsets.only(top: 10),
                     child: Wrap(
                       spacing: 5,
                       children: [
                         Text("15+", style: TextStyle(color: Colors.white)),
-                        Text(movie.getYear(), style: TextStyle(color: Colors.white)),
+                        Text(tmdbItem.getYear(), style: TextStyle(color: Colors.white)),
                         Icon(Icons.star, color: Colors.orange, size: 16,),
-                        Text(movie.voteAverage.toString(), style: TextStyle(color: Colors.orange))
+                        Text(tmdbItem.voteAverage.toString(), style: TextStyle(color: Colors.orange))
                       ],
                     ),
                   ),
@@ -126,7 +126,7 @@ class DetailView extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 5),
                     child: Text(
-                        movie.overview,
+                        tmdbItem.overview,
                         style: TextStyle(color: Colors.white)),
                   ),
                 ],

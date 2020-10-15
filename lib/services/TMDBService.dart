@@ -2,10 +2,18 @@ import 'package:movie_app/models/Movie.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'package:movie_app/models/TvShow.dart';
+
 class TMDBMovieType {
   static const String POPULAR = 'popular';
   static const String LATEST = 'latest';
   static const String UPCOMING = 'upcoming';
+  static const String TOP_RATED = 'top_rated';
+}
+
+class TMDBShowType {
+  static const String POPULAR = 'popular';
+  static const String LATEST = 'latest';
   static const String TOP_RATED = 'top_rated';
 }
 
@@ -34,7 +42,25 @@ class TMDBService {
       // If the server did return a 200 OK response,
       // then parse the JSON.
       Map<String, dynamic> decodedData = json.decode(response.body);
-      List<Movie> list = decodedData['results'].map<Movie>((json) => Movie.fromJson(json)).toList();
+      List<Movie> list = decodedData['results'].map<Movie>((json) => Movie().fromJson(json)).toList();
+
+      return list;
+    } else {
+      // If the server did not return a 200 OK response,
+      // then throw an exception.
+      throw Exception('Failed to load Movies');
+    }
+  }
+
+  Future<List<TvShow>> getTvShowList(String type) async {
+    String url = _constructUrl("/tv/$type");
+    http.Response response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      // If the server did return a 200 OK response,
+      // then parse the JSON.
+      Map<String, dynamic> decodedData = json.decode(response.body);
+      List<TvShow> list = decodedData['results'].map<TvShow>((json) => TvShow().fromJson(json)).toList();
 
       return list;
     } else {

@@ -39,7 +39,6 @@ class VerticalCardList<T> extends StatelessWidget {
               }
 
               if (!snapshot.hasData) {
-                print("Là");
                 return Text("rien", style: TextStyle(color: Colors.white));
               }
 
