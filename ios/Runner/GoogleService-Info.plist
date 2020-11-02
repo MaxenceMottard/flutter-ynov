@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>536178538573-me1rvui8gomlbuhrpmbte6g1chas15lk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.536178538573-me1rvui8gomlbuhrpmbte6g1chas15lk</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>536178538573-buenu3gg7olbnf87bs0oj51vp8ppt778.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCwEPVjkCG4U5Qf_1NNOomvVor8fkcqGdM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>536178538573</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ynovproject.moviesAppMM</string>
+	<key>PROJECT_ID</key>
+	<string>ynov-app-bde-ae777</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ynov-app-bde-ae777.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:536178538573:ios:08519c2052c9b430488404</string>
+	<key>DATABASE_URL</key>
+	<string>https://ynov-app-bde-ae777.firebaseio.com</string>
+</dict>
+</plist>
